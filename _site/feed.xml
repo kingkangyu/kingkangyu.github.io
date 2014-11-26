@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>康雨的技术博客</title>
+    <description>康雨的技术博客，总结工作中遇到的问题和解决办法。</description>
+    <link>http://kingknagyu.github.io/</link>
+    <atom:link href="http://kingknagyu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 26 Nov 2014 20:35:37 +0800</pubDate>
+    <lastBuildDate>Wed, 26 Nov 2014 20:35:37 +0800</lastBuildDate>
+    <generator>Jekyll v2.5.1</generator>
+    
+      <item>
+        <title>博客总算搭建完了</title>
+        <description>&lt;p&gt;来来回回各种事情折腾了一周，博客总算是搭建完了。&lt;/p&gt;
+
+&lt;p&gt;Jekyll真是赞，Markdown真是赞，GitHub真是赞。&lt;/p&gt;
+
+&lt;p&gt;过几天先把最近遇到的问题给补上，引入&lt;a href=&quot;http://getbootstrap.com&quot;&gt;Bootstrap&lt;/a&gt;把博客的UI美化一下，但是还是简约为主了。&lt;/p&gt;
+
+&lt;p&gt;顺便一提，Jekyll生成的时候可能时区还有些问题，这是我YAML头的日期：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;date:   2014-11-26 20:13:03
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;貌似显示成11-27了，应该是在UTC＋8时区的缘故，有空在解决吧。&lt;/p&gt;
+
+&lt;p&gt;今天就先这样吧。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 27 Nov 2014 04:13:03 +0800</pubDate>
+        <link>http://kingknagyu.github.io/%E5%8D%9A%E5%AE%A2/2014/11/27/the-first-post.html</link>
+        <guid isPermaLink="true">http://kingknagyu.github.io/%E5%8D%9A%E5%AE%A2/2014/11/27/the-first-post.html</guid>
+        
+        
+        <category>博客</category>
+        
+      </item>
+    
+  </channel>
+</rss>

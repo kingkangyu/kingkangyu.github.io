@@ -1,0 +1,10 @@
+# Site settings
+title: 康雨的技术博客
+email: kingkangyu@163.com
+description: 康雨的技术博客，总结工作中遇到的问题和解决办法。
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://kingknagyu.github.io" # the base hostname & protocol for your site
+github_username:  kingkangyu
+
+# Build settings
+markdown: kramdown
