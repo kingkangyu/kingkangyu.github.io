@@ -133,7 +133,7 @@ gem sources -a https://ruby.taobao.org/
 或这种
 
 
->source http://ruby.taobao.org/ is not a URI
+>source https://ruby.taobao.org/ is not a URI
 
 
 错误。
