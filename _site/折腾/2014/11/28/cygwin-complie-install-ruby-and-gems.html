@@ -11,8 +11,12 @@
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/typo.css">
+  <link rel="stylesheet" href="/css/prettify.css">
   <link rel="canonical" href="http://kingknagyu.github.io/%E6%8A%98%E8%85%BE/2014/11/28/cygwin-complie-install-ruby-and-gems.html">
   <link rel="alternate" type="application/atom+xml" title="康雨的技术博客" href="http://kingknagyu.github.io/feed.xml" />
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/prettify.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 </head>
 
 
@@ -88,45 +92,40 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 <p>打开Cygwin，输入：</p>
 
-<pre><code>cd /
-
-cd cygdrive(这里是磁盘的目录）
-
-cd d(这里是你放置下载的源码的盘符)
-
-cd 相应的源码目录
+<pre><code>$ cd /
+$ cd cygdrive(这里是磁盘的目录）
+$ cd d(这里是你放置下载的源码的盘符)
+$ cd 相应的源码目录
 </code></pre>
 
 <p>我为了方便把下载Ruby和gems源码直接放在D盘根目录了</p>
 
 <p>解压源码包：</p>
 
-<pre><code>tar -zxv -f ruby-2.15.tar.gz
+<pre><code>$ tar -zxv -f ruby-2.15.tar.gz
 </code></pre>
 
 <p><code>-f</code>后跟着下载的源码包文件名，这里是<code>ruby-2.15.tar.gz</code></p>
 
 <p>到解压的目录：</p>
 
-<pre><code>cd ruby-2.1.5
+<pre><code>$ cd ruby-2.1.5
 </code></pre>
 
 <p>一般是下载的Ruby加版本号，<code>2.1.5</code>就是我当前下载的版本号。</p>
 
 <p>然后就是大同小异的安装了：</p>
 
-<pre><code>./configure
-
-make
-
-make install
+<pre><code>$ ./configure
+$ make
+$ make install
 </code></pre>
 
 <p><code>make</code>时间会有点长，一般安装是不会出现问题的。（要是./configure不能运行，你就要看看是不是Cygwin安装的时候gcc没有安装上，就是上一步那个Devel点成Install你没做，或者做的不对，尝试在Cygwin中输入gcc看看说的是不是命令不存在）</p>
 
 <p>查看Ruby版本</p>
 
-<pre><code>ruby -v
+<pre><code>$ ruby -v
 </code></pre>
 
 <blockquote>
@@ -139,27 +138,27 @@ make install
 
 <p>切换到RubyGems所在目录，我的只需</p>
 
-<pre><code>cd ..
+<pre><code>$ cd ..
 </code></pre>
 
 <p>解压源码包：</p>
 
-<pre><code>tar -zxv -f rubygems-2.4.4
+<pre><code>$ tar -zxv -f rubygems-2.4.4
 </code></pre>
 
 <p>切换到解压目录：</p>
 
-<pre><code>cd rubygems-2.4.4
+<pre><code>$ cd rubygems-2.4.4
 </code></pre>
 
 <p>然后gems的安装，这个是用ruby命令安装的：</p>
 
-<pre><code>ruby setup.rb
+<pre><code>$ ruby setup.rb
 </code></pre>
 
 <p>然后查看gem版本：</p>
 
-<pre><code>gem -v
+<pre><code>$ gem -v
 </code></pre>
 
 <blockquote>
@@ -181,9 +180,8 @@ make install
 
 <pre>
 <del>
-gem sources --remove https://rubygems.org/
-
-gem sources -a https://ruby.taobao.org/
+$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
 </del>
 </pre>
 
@@ -200,15 +198,13 @@ gem sources -a https://ruby.taobao.org/
   <p>source https://ruby.taobao.org/ is not a URI</p>
 </blockquote>
 
-<p>错误。</p>
+<p>错误。(后来我测试发现也正确了，坑爹。)</p>
 
 <p>所以应该是这样的：</p>
 
-<pre><code>gem sources -r 'https://rubygems.org/'
-
-gem sources -a 'https://ruby.taobao.org/'
-
-gem sources -l
+<pre><code>$ gem sources -r 'https://rubygems.org/'
+$ gem sources -a 'https://ruby.taobao.org/'
+$ gem sources -l
 </code></pre>
 
 <blockquote>

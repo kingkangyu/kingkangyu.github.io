@@ -41,41 +41,36 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 打开Cygwin，输入：
 
-	cd /
-
-	cd cygdrive(这里是磁盘的目录）
-
-	cd d(这里是你放置下载的源码的盘符)
-
-	cd 相应的源码目录
+	$ cd /
+	$ cd cygdrive(这里是磁盘的目录）
+	$ cd d(这里是你放置下载的源码的盘符)
+	$ cd 相应的源码目录
 
 我为了方便把下载Ruby和gems源码直接放在D盘根目录了
 	
 解压源码包：
 
-	tar -zxv -f ruby-2.15.tar.gz
+	$ tar -zxv -f ruby-2.15.tar.gz
 
 `-f`后跟着下载的源码包文件名，这里是`ruby-2.15.tar.gz`
 
 到解压的目录：
 
-	cd ruby-2.1.5
+	$ cd ruby-2.1.5
 
 一般是下载的Ruby加版本号，`2.1.5`就是我当前下载的版本号。
 
 然后就是大同小异的安装了：
 
-	./configure
-
-	make
-
-	make install
+	$ ./configure
+	$ make
+	$ make install
 
 `make`时间会有点长，一般安装是不会出现问题的。（要是./configure不能运行，你就要看看是不是Cygwin安装的时候gcc没有安装上，就是上一步那个Devel点成Install你没做，或者做的不对，尝试在Cygwin中输入gcc看看说的是不是命令不存在）
 
 查看Ruby版本
 
-	ruby -v
+	$ ruby -v
 
 >ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-cygwin]
 
@@ -85,23 +80,23 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 切换到RubyGems所在目录，我的只需
 
-	cd ..
-	
+	$ cd ..
+
 解压源码包：
 
-	tar -zxv -f rubygems-2.4.4
+	$ tar -zxv -f rubygems-2.4.4
 
 切换到解压目录：
 
-	cd rubygems-2.4.4
+	$ cd rubygems-2.4.4
 
 然后gems的安装，这个是用ruby命令安装的：
 
-	ruby setup.rb
+	$ ruby setup.rb
 
 然后查看gem版本：
 	
-	gem -v
+	$ gem -v
 
 >2.4.4
 
@@ -118,9 +113,8 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 <pre>
 <del>
-gem sources --remove https://rubygems.org/
-
-gem sources -a https://ruby.taobao.org/
+$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
 </del>
 </pre>
 
@@ -136,15 +130,13 @@ gem sources -a https://ruby.taobao.org/
 >source https://ruby.taobao.org/ is not a URI
 
 
-错误。
+错误。(后来我测试发现也正确了，坑爹。)
 
 所以应该是这样的：
 
-	gem sources -r 'https://rubygems.org/'
-
-	gem sources -a 'https://ruby.taobao.org/'
-
-	gem sources -l
+	$ gem sources -r 'https://rubygems.org/'
+	$ gem sources -a 'https://ruby.taobao.org/'
+	$ gem sources -l
 
 >*** CURRENT SOURCES ***
 >	

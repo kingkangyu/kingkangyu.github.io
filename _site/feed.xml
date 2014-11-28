@@ -5,8 +5,8 @@
     <description>康雨的技术博客，总结工作中遇到的问题和解决办法。</description>
     <link>http://kingknagyu.github.io/</link>
     <atom:link href="http://kingknagyu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Nov 2014 21:01:14 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Nov 2014 21:01:14 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Nov 2014 22:18:53 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Nov 2014 22:18:53 +0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -49,45 +49,40 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 &lt;p&gt;打开Cygwin，输入：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd /
-
-cd cygdrive(这里是磁盘的目录）
-
-cd d(这里是你放置下载的源码的盘符)
-
-cd 相应的源码目录
+&lt;pre&gt;&lt;code&gt;$ cd /
+$ cd cygdrive(这里是磁盘的目录）
+$ cd d(这里是你放置下载的源码的盘符)
+$ cd 相应的源码目录
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;我为了方便把下载Ruby和gems源码直接放在D盘根目录了&lt;/p&gt;
 
 &lt;p&gt;解压源码包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tar -zxv -f ruby-2.15.tar.gz
+&lt;pre&gt;&lt;code&gt;$ tar -zxv -f ruby-2.15.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;-f&lt;/code&gt;后跟着下载的源码包文件名，这里是&lt;code&gt;ruby-2.15.tar.gz&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;到解压的目录：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd ruby-2.1.5
+&lt;pre&gt;&lt;code&gt;$ cd ruby-2.1.5
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;一般是下载的Ruby加版本号，&lt;code&gt;2.1.5&lt;/code&gt;就是我当前下载的版本号。&lt;/p&gt;
 
 &lt;p&gt;然后就是大同小异的安装了：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;./configure
-
-make
-
-make install
+&lt;pre&gt;&lt;code&gt;$ ./configure
+$ make
+$ make install
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;code&gt;make&lt;/code&gt;时间会有点长，一般安装是不会出现问题的。（要是./configure不能运行，你就要看看是不是Cygwin安装的时候gcc没有安装上，就是上一步那个Devel点成Install你没做，或者做的不对，尝试在Cygwin中输入gcc看看说的是不是命令不存在）&lt;/p&gt;
 
 &lt;p&gt;查看Ruby版本&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ruby -v
+&lt;pre&gt;&lt;code&gt;$ ruby -v
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -100,27 +95,27 @@ make install
 
 &lt;p&gt;切换到RubyGems所在目录，我的只需&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd ..
+&lt;pre&gt;&lt;code&gt;$ cd ..
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;解压源码包：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;tar -zxv -f rubygems-2.4.4
+&lt;pre&gt;&lt;code&gt;$ tar -zxv -f rubygems-2.4.4
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;切换到解压目录：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd rubygems-2.4.4
+&lt;pre&gt;&lt;code&gt;$ cd rubygems-2.4.4
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后gems的安装，这个是用ruby命令安装的：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ruby setup.rb
+&lt;pre&gt;&lt;code&gt;$ ruby setup.rb
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后查看gem版本：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;gem -v
+&lt;pre&gt;&lt;code&gt;$ gem -v
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -142,9 +137,8 @@ make install
 
 &lt;pre&gt;
 &lt;del&gt;
-gem sources --remove https://rubygems.org/
-
-gem sources -a https://ruby.taobao.org/
+$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/
 &lt;/del&gt;
 &lt;/pre&gt;
 
@@ -161,15 +155,13 @@ gem sources -a https://ruby.taobao.org/
   &lt;p&gt;source https://ruby.taobao.org/ is not a URI&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;错误。&lt;/p&gt;
+&lt;p&gt;错误。(后来我测试发现也正确了，坑爹。)&lt;/p&gt;
 
 &lt;p&gt;所以应该是这样的：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;gem sources -r &#39;https://rubygems.org/&#39;
-
-gem sources -a &#39;https://ruby.taobao.org/&#39;
-
-gem sources -l
+&lt;pre&gt;&lt;code&gt;$ gem sources -r &#39;https://rubygems.org/&#39;
+$ gem sources -a &#39;https://ruby.taobao.org/&#39;
+$ gem sources -l
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
