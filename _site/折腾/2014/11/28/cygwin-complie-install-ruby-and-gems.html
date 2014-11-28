@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width initial-scale=1">
 
   <title>Cygwin编译安装最新版Ruby和gems</title>
-  <meta name="description" content="因为想在公司电脑上写博客，但是Jekyll的环境需要ruby，就去Ruby官网下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也真是够了!)，下载下来gems更新淘宝源的时候显示：  ...">
+  <meta name="description" content="因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去Ruby官网下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也真是够了!)，下载下来gems更新淘宝源的时候显示： ...">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="http://kingknagyu.github.io/%E6%8A%98%E8%85%BE/2014/11/28/cygwin-complie-install-ruby-and-gems.html">
@@ -49,8 +49,8 @@
   </header>
 
   <article class="post-content">
-    <p>因为想在公司电脑上写博客，但是Jekyll的环境需要ruby，就去<a href="https://www.ruby-lang.org/zh_cn/downloads/">Ruby官网</a>下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
-windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也真是够了!)，下载下来gems更新<a href="http://ruby.taobao.org/">淘宝源</a>的时候显示：</p>
+    <p>因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去<a href="https://www.ruby-lang.org/zh_cn/downloads/">Ruby官网</a>下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也真是够了!)，下载下来gems更新<a href="http://ruby.taobao.org/">淘宝源</a>的时候显示：</p>
 
 <blockquote>
   <p>ERROR:  While executing gem … (Gem::RemoteSourceException)</p>
@@ -64,7 +64,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 <p>后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。</p>
 
-<p>然后就发现了<a href="https://cygwin.com/install.html">Cygwin</a>,它是用来在windows模拟linux的程序，到<a href="https://cygwin.com/install.html">官网</a>根据自己的系统（32位setup-x86.exe ,64位setup-x86_64.exe）下载相应的版本。</p>
+<p>然后就发现了<a href="https://cygwin.com/install.html">Cygwin</a>,它是用来在windows模拟linux的程序，到<a href="https://cygwin.com/install.html">官网</a>根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。</p>
 
 <p>安装的时候一路下一步，当到达<code>Choose A Download Site</code>这一步时选择:</p>
 
@@ -79,13 +79,13 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 <p>这里看到两处蓝色线的地方，点一下<code>Devel</code>，会从<code>Default</code>变成<code>Install</code>，这里是包含gcc的部分，可以从官网下载源码编译安装。
 有人可能会问，下边的蓝线标注不是有<code>Ruby</code>选项，把它点一下变成<code>Install</code>不就可以了。这种是可以安装<code>Ruby</code>和<code>gems</code>的
-，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接跳到<a href="#taobaoyuan">下边</a>看如何更新淘宝源）</p>
+，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接<a href="#taobaoyuan">跳到下边</a>看如何更新淘宝源）</p>
 
 <p>然后一直下一步就好了。</p>
 
 <p>最后一步记得在桌面新建一个快捷方式，以后好找。</p>
 
-<p>打开Cygwin。</p>
+<p>打开Cygwin，输入：</p>
 
 <pre><code>cd /
 
@@ -144,8 +144,11 @@ make install
 <p>解压源码包：</p>
 
 <pre><code>tar -zxv -f rubygems-2.4.4
+</code></pre>
 
-cd rubygems-2.4.4
+<p>切换到解压目录：</p>
+
+<pre><code>cd rubygems-2.4.4
 </code></pre>
 
 <p>然后gems的安装，这个是用ruby命令安装的：</p>
@@ -164,9 +167,9 @@ cd rubygems-2.4.4
 
 <p>至此Ruby和gems已经在Cygwin环境下全部配置完成。</p>
 
-<div id="taobaoyuan">
-
-</div>
+<h3 id="taobaoyuan">
+更换淘宝gems源
+</h3>
 <p>引用<a href="http://ruby.taobao.org/">淘宝gems源</a>的话</p>
 
 <blockquote>

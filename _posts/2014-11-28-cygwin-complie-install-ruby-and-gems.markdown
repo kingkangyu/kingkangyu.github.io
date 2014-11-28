@@ -6,8 +6,8 @@ categories: 折腾
 tags: [cygwin,ruby,gems]
 ---
 
-因为想在公司电脑上写博客，但是Jekyll的环境需要ruby，就去[Ruby官网](https://www.ruby-lang.org/zh_cn/downloads/)下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
-windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也真是够了!)，下载下来gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
+因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去[Ruby官网](https://www.ruby-lang.org/zh_cn/downloads/)下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也真是够了!)，下载下来gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
 		
 >ERROR:  While executing gem ... (Gem::RemoteSourceException)
 >
@@ -19,7 +19,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。
 
-然后就发现了[Cygwin](https://cygwin.com/install.html),它是用来在windows模拟linux的程序，到[官网](https://cygwin.com/install.html)根据自己的系统（32位setup-x86.exe ,64位setup-x86_64.exe）下载相应的版本。
+然后就发现了[Cygwin](https://cygwin.com/install.html),它是用来在windows模拟linux的程序，到[官网](https://cygwin.com/install.html)根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。
 
 安装的时候一路下一步，当到达`Choose A Download Site`这一步时选择:
 
@@ -33,13 +33,13 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 这里看到两处蓝色线的地方，点一下`Devel`，会从`Default`变成`Install`，这里是包含gcc的部分，可以从官网下载源码编译安装。
 有人可能会问，下边的蓝线标注不是有`Ruby`选项，把它点一下变成`Install`不就可以了。这种是可以安装`Ruby`和`gems`的
-，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接跳到[下边](#taobaoyuan)看如何更新淘宝源）
+，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接[跳到下边](#taobaoyuan)看如何更新淘宝源）
 
 然后一直下一步就好了。
 
 最后一步记得在桌面新建一个快捷方式，以后好找。
 
-打开Cygwin。
+打开Cygwin，输入：
 
 	cd /
 
@@ -91,6 +91,8 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 	tar -zxv -f rubygems-2.4.4
 
+切换到解压目录：
+
 	cd rubygems-2.4.4
 
 然后gems的安装，这个是用ruby命令安装的：
@@ -105,9 +107,9 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 至此Ruby和gems已经在Cygwin环境下全部配置完成。
 
-<div id="taobaoyuan">
-
-</div>
+<h3 id="taobaoyuan">
+更换淘宝gems源
+</h3>
 引用[淘宝gems源](http://ruby.taobao.org/)的话
 
 >由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。
