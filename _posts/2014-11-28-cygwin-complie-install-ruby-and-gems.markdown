@@ -3,17 +3,17 @@ layout: post
 title:  "Cygwin编译安装最新版Ruby和gems"
 date:   2014-11-28 12:52:00
 categories: 折腾
-tags: [cygwin,ruby,gems]
+tags: cygwin ruby gems
 ---
 
 因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去[Ruby官网](https://www.ruby-lang.org/zh_cn/downloads/)下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
-windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也真是够了!)，下载下来gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，也真是够了!)，安装完成后gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
 		
 >ERROR:  While executing gem ... (Gem::RemoteSourceException)
 >
 >HTTP Response 302
 
-如何更新[淘宝源](http://ruby.taobao.org/)我文章后边会说到。
+如何更新[淘宝源](http://ruby.taobao.org/)我文章[后边](#taobaoyuan)会说到。
 
 一开始以为是被屏蔽了，挂上VPN还是一样。
 

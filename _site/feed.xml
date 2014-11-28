@@ -5,14 +5,14 @@
     <description>康雨的技术博客，总结工作中遇到的问题和解决办法。</description>
     <link>http://kingknagyu.github.io/</link>
     <atom:link href="http://kingknagyu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Nov 2014 15:17:19 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Nov 2014 15:17:19 +0800</lastBuildDate>
+    <pubDate>Fri, 28 Nov 2014 16:16:55 +0800</pubDate>
+    <lastBuildDate>Fri, 28 Nov 2014 16:16:55 +0800</lastBuildDate>
     <generator>Jekyll v2.5.2</generator>
     
       <item>
         <title>Cygwin编译安装最新版Ruby和gems</title>
         <description>&lt;p&gt;因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去&lt;a href=&quot;https://www.ruby-lang.org/zh_cn/downloads/&quot;&gt;Ruby官网&lt;/a&gt;下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
-windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也真是够了!)，下载下来gems更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;的时候显示：&lt;/p&gt;
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，也真是够了!)，安装完成后gems更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;的时候显示：&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;ERROR:  While executing gem … (Gem::RemoteSourceException)&lt;/p&gt;
@@ -20,7 +20,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5,也�
   &lt;p&gt;HTTP Response 302&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;如何更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;我文章后边会说到。&lt;/p&gt;
+&lt;p&gt;如何更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;我文章&lt;a href=&quot;#taobaoyuan&quot;&gt;后边&lt;/a&gt;会说到。&lt;/p&gt;
 
 &lt;p&gt;一开始以为是被屏蔽了，挂上VPN还是一样。&lt;/p&gt;
 
