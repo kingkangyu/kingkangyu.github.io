@@ -1,32 +1,35 @@
 ---
 layout: post
-title:  "Cygwin编译安装最新版Ruby和gems及更换gems淘宝源"
+title:  "Cygwin编译安装最新版Ruby和gems"
 date:   2014-11-28 12:52:00
 categories: 折腾
 tags: [cygwin,ruby,gems]
 ---
 
-因为想在公司电脑上写博客，但是Jekyll的环境需要ruby，就去[Ruby官网][ruby]下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
-windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也真是够了!)，下载下来gems更新[淘宝源][taobao]的时候显示：
+因为想在公司电脑上写博客，但是Jekyll的环境需要ruby，就去[Ruby官网](https://www.ruby-lang.org/zh_cn/downloads/)下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也真是够了!)，下载下来gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
 		
-	ERROR:  While executing gem ... (Gem::RemoteSourceException)
-    HTTP Response 302
+>ERROR:  While executing gem ... (Gem::RemoteSourceException)
+>
+>HTTP Response 302
 
-如何更新[淘宝源][taobao]我文章后边会说到。
+如何更新[淘宝源](http://ruby.taobao.org/)我文章后边会说到。
 
 一开始以为是被屏蔽了，挂上VPN还是一样。
 
 后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。
 
-然后就发现了[Cygwin][cygwin],它是用来在windows模拟linux的程序，到[官网][cygwin]根据自己的系统（32位setup-x86.exe ,64位setup-x86_64.exe）下载相应的版本。
+然后就发现了[Cygwin](https://cygwin.com/install.html),它是用来在windows模拟linux的程序，到[官网](https://cygwin.com/install.html)根据自己的系统（32位setup-x86.exe ,64位setup-x86_64.exe）下载相应的版本。
 
 安装的时候一路下一步，当到达`Choose A Download Site`这一步时选择:
 
 	ftp://mirros.neusoft.edu.cn
+
 (也不排除有163源，公司联通没看到，家里电信倒是看到了）
 
 下一步
-![安装选项](/images/20141128/20141128ruby)
+
+![安装选项]({{ site.url }}/assets/images/20141128/20141128ruby.JPG)
 
 这里看到两处蓝色线的地方，点一下`Devel`，会从`Default`变成`Install`，这里是包含gcc的部分，可以从官网下载源码编译安装。
 有人可能会问，下边的蓝线标注不是有`Ruby`选项，把它点一下变成`Install`不就可以了。这种是可以安装`Ruby`和`gems`的
@@ -36,7 +39,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 最后一步记得在桌面新建一个快捷方式，以后好找。
 
-打开[Cygwin][cygwin]。
+打开Cygwin。
 
 	cd /
 
@@ -52,7 +55,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 
 	tar -zxv -f ruby-2.15.tar.gz
 
--f后跟着下载的源码包文件名，这里是`ruby-2.15.tar.gz`
+`-f`后跟着下载的源码包文件名，这里是`ruby-2.15.tar.gz`
 
 到解压的目录：
 
@@ -105,7 +108,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5也�
 <div id="taobaoyuan">
 
 </div>
-[淘宝gems源][taobao]的话
+引用[淘宝gems源](http://ruby.taobao.org/)的话
 
 >由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。
 
@@ -118,31 +121,37 @@ gem sources --remove https://rubygems.org/
 gem sources -a https://ruby.taobao.org/
 </del>
 </pre>
-<blockquote>
+
 
 为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：
 这种
+
 >source http://rubygems.org/ not present in cache
 
 或这种
 
+
 >source http://ruby.taobao.org/ is not a URI
 
-错误，坑爹啊~
 
-所以应该是这种的
+错误。
+
+所以应该是这样的：
 
 	gem sources -r 'https://rubygems.org/'
 
 	gem sources -a 'https://ruby.taobao.org/'
 
 	gem sources -l
->	*** CURRENT SOURCES ***
-	
->	https://ruby.taobao.org
+
+>*** CURRENT SOURCES ***
+>	
+>https://ruby.taobao.org
+
+用`'`把URL括起来就正确了，
 
 至此就完美的结束了。
 
-[ruby]:(https://www.ruby-lang.org/zh_cn/downloads/)
-[taobao]:(http://ruby.taobao.org/)
-[cygwin]:https://cygwin.com/install.html
+吐槽一下，发布这篇的时候，GitHub不支持markdown链接的参考式。
+
+
