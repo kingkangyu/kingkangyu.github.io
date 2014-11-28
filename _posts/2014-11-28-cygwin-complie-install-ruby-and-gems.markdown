@@ -128,7 +128,7 @@ gem sources -a https://ruby.taobao.org/
 为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：
 这种
 
->source http://rubygems.org/ not present in cache
+>source https://rubygems.org/ not present in cache
 
 或这种
 
