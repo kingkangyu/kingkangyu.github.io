@@ -102,9 +102,10 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 至此Ruby和gems已经在Cygwin环境下全部配置完成。
 
-<h3 id="taobaoyuan">
-更换淘宝gems源
-</h3>
+----------------------------------------
+
+<h4 id="taobaoyuan">更换淘宝gems源：</h4>
+
 引用淘宝gems源的话
 
 >由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。
@@ -112,10 +113,8 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 淘宝gems源上的安装教程是这样的：
 
 <pre>
-<del>
-$ gem sources --remove https://rubygems.org/
-$ gem sources -a https://ruby.taobao.org/
-</del>
+<del>$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/</del>
 </pre>
 
 为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：

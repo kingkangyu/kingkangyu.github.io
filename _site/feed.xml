@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>康雨的技术博客</title>
+    <description>康雨的技术博客，总结工作中遇到的问题和解决办法。</description>
+    <link>http://kingknagyu.github.io/</link>
+    <atom:link href="http://kingknagyu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 29 Nov 2014 21:05:47 +0800</pubDate>
+    <lastBuildDate>Sat, 29 Nov 2014 21:05:47 +0800</lastBuildDate>
+    <generator>Jekyll v2.5.1</generator>
+    
+      <item>
+        <title>Cygwin编译安装最新版Ruby和gems</title>
+        <description>&lt;p&gt;因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去&lt;a href=&quot;https://www.ruby-lang.org/zh_cn/downloads/&quot;&gt;Ruby官网&lt;/a&gt;下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
+windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，也真是够了!)，安装完成后gems更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;的时候显示：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ERROR:  While executing gem … (Gem::RemoteSourceException)&lt;/p&gt;
+
+  &lt;p&gt;HTTP Response 302&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;如何更新淘宝源我文章&lt;a href=&quot;#taobaoyuan&quot;&gt;后边&lt;/a&gt;会说到。&lt;/p&gt;
+
+&lt;p&gt;一开始以为是被屏蔽了，挂上VPN还是一样。&lt;/p&gt;
+
+&lt;p&gt;后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。&lt;/p&gt;
+
+&lt;p&gt;然后就发现了&lt;a href=&quot;https://cygwin.com/install.html&quot;&gt;Cygwin&lt;/a&gt;,它是用来在windows模拟linux的程序，到官网根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。&lt;/p&gt;
+
+&lt;p&gt;安装的时候一路下一步，当到达&lt;code&gt;Choose A Download Site&lt;/code&gt;这一步时选择:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ftp://mirros.neusoft.edu.cn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(也不排除有163源，公司联通没看到，家里电信倒是看到了）&lt;/p&gt;
+
+&lt;p&gt;下一步&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kingkangyu/kingkangyu.github.io/master/assets/images/20141128/20141128ruby.jpg&quot; alt=&quot;安装选项&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里看到两处蓝色线的地方，点一下&lt;code&gt;Devel&lt;/code&gt;，会从&lt;code&gt;Default&lt;/code&gt;变成&lt;code&gt;Install&lt;/code&gt;，这里是包含gcc的部分，用来编译安装从官网下载的Ruby源码。
+有人可能会问，下边的蓝线标注不是有&lt;code&gt;Ruby&lt;/code&gt;选项，把它点一下变成&lt;code&gt;Install&lt;/code&gt;不就可以了。这种是可以安装&lt;code&gt;Ruby&lt;/code&gt;和&lt;code&gt;gems&lt;/code&gt;的
+，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接&lt;a href=&quot;#taobaoyuan&quot;&gt;跳到下边&lt;/a&gt;看如何更新淘宝源）&lt;/p&gt;
+
+&lt;p&gt;然后一直下一步就好了。&lt;/p&gt;
+
+&lt;p&gt;最后一步记得在桌面新建一个快捷方式，以后好找。&lt;/p&gt;
+
+&lt;p&gt;打开Cygwin，输入：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd /
+$ cd cygdrive(这里是磁盘的目录）
+$ cd d(这里是你放置下载的源码的盘符)
+$ cd 相应的源码目录
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;我为了方便把下载Ruby和gems源码直接放在D盘根目录了&lt;/p&gt;
+
+&lt;p&gt;解压源码包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar -zxv -f ruby-2.15.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-f&lt;/code&gt;后跟着下载的源码包文件名，这里是&lt;code&gt;ruby-2.15.tar.gz&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;到解压的目录：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ruby-2.1.5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;一般是下载的Ruby加版本号，&lt;code&gt;2.1.5&lt;/code&gt;就是我当前下载的版本号。&lt;/p&gt;
+
+&lt;p&gt;然后就是大同小异的安装了：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ./configure
+$ make
+$ make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;make&lt;/code&gt;时间会有点长，一般安装是不会出现问题的。（要是./configure不能运行，你就要看看是不是Cygwin安装的时候gcc没有安装上，就是上一步那个Devel点成Install你没做，或者做的不对，尝试在Cygwin中输入gcc看看说的是不是命令不存在）&lt;/p&gt;
+
+&lt;p&gt;查看Ruby版本&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ruby -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-cygwin]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;你的输出不一定和我一样，但应该显示你安装的Ruby版本，如果没有更新，关闭Cygwin，重新打开再看看。&lt;/p&gt;
+
+&lt;p&gt;好了，这里Ruby就装完了，然后是gems。&lt;/p&gt;
+
+&lt;p&gt;切换到RubyGems所在目录，我的只需&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ..
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;解压源码包：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ tar -zxv -f rubygems-2.4.4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;切换到解压目录：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd rubygems-2.4.4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后gems的安装，这个是用ruby命令安装的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ruby setup.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后查看gem版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem -v
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;2.4.4&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;至此Ruby和gems已经在Cygwin环境下全部配置完成。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;taobaoyuan&quot;&gt;更换淘宝gems源：&lt;/h4&gt;
+
+&lt;p&gt;引用淘宝gems源的话&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;淘宝gems源上的安装教程是这样的：&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;del&gt;$ gem sources --remove https://rubygems.org/
+$ gem sources -a https://ruby.taobao.org/&lt;/del&gt;
+&lt;/pre&gt;
+
+&lt;p&gt;为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：
+这种&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;source https://rubygems.org/ not present in cache&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;或这种&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;source https://ruby.taobao.org/ is not a URI&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;错误。(后来我测试发现也正确了，坑爹。)&lt;/p&gt;
+
+&lt;p&gt;所以应该是这样的：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ gem sources -r &#39;https://rubygems.org/&#39;
+$ gem sources -a &#39;https://ruby.taobao.org/&#39;
+$ gem sources -l
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;** CURRENT SOURCES **&lt;/em&gt;&lt;/p&gt;
+
+  &lt;p&gt;https://ruby.taobao.org&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;用&lt;code&gt;&#39;&lt;/code&gt;把URL括起来就正确了，&lt;/p&gt;
+
+&lt;p&gt;至此就完美的结束了。&lt;/p&gt;
+
+&lt;p&gt;吐槽一下，发布这篇的时候，GitHub不支持markdown链接的参考式。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 28 Nov 2014 20:52:00 +0800</pubDate>
+        <link>http://kingknagyu.github.io/%E6%8A%98%E8%85%BE/2014/11/28/cygwin-complie-install-ruby-and-gems.html</link>
+        <guid isPermaLink="true">http://kingknagyu.github.io/%E6%8A%98%E8%85%BE/2014/11/28/cygwin-complie-install-ruby-and-gems.html</guid>
+        
+        <category>cygwin</category>
+        
+        <category>ruby</category>
+        
+        <category>gems</category>
+        
+        
+        <category>折腾</category>
+        
+      </item>
+    
+      <item>
+        <title>博客总算搭建完了</title>
+        <description>&lt;p&gt;来来回回各种事情折腾了一周，博客总算是搭建完了。&lt;/p&gt;
+
+&lt;p&gt;Jekyll真是赞，Markdown真是赞，GitHub真是赞。&lt;/p&gt;
+
+&lt;p&gt;过几天先把最近遇到的问题给补上，引入&lt;a href=&quot;http://getbootstrap.com&quot;&gt;Bootstrap&lt;/a&gt;把博客的UI美化一下，但是还是简约为主了。&lt;/p&gt;
+
+&lt;p&gt;顺便一提，Jekyll生成的时候可能时区还有些问题，这是我YAML头的日期：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;date:   2014-11-26 20:13:03
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;貌似显示成11-27了，应该是在UTC＋8时区的缘故，有空在解决吧。&lt;/p&gt;
+
+&lt;p&gt;今天就先这样吧。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 27 Nov 2014 04:13:03 +0800</pubDate>
+        <link>http://kingknagyu.github.io/%E5%8D%9A%E5%AE%A2/2014/11/27/the-first-post.html</link>
+        <guid isPermaLink="true">http://kingknagyu.github.io/%E5%8D%9A%E5%AE%A2/2014/11/27/the-first-post.html</guid>
+        
+        
+        <category>博客</category>
+        
+      </item>
+    
+  </channel>
+</rss>
