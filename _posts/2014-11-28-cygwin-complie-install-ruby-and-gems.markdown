@@ -5,13 +5,12 @@ date:   2014-11-28 12:52:00
 categories: 折腾
 tags: cygwin ruby gems
 ---
-
 因为想在公司电脑上写博客，但是Jekyll的环境需要Ruby，就去[Ruby官网](https://www.ruby-lang.org/zh_cn/downloads/)下载，公司电脑是windows，也不能装linux，没办法只能下载windows版。
 windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，也真是够了!)，安装完成后gems更新[淘宝源](http://ruby.taobao.org/)的时候显示：
 		
->ERROR:  While executing gem ... (Gem::RemoteSourceException)
+><samp>ERROR:  While executing gem ... (Gem::RemoteSourceException)</samp>
 >
->HTTP Response 302
+><samp>HTTP Response 302</samp>
 
 如何更新淘宝源我文章[后边](#taobaoyuan)会说到。
 
@@ -72,7 +71,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 	$ ruby -v
 
->ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-cygwin]
+><samp>ruby 2.1.5p273 (2014-11-13 revision 48405) [x86_64-cygwin]</samp>
 
 你的输出不一定和我一样，但应该显示你安装的Ruby版本，如果没有更新，关闭Cygwin，重新打开再看看。
 
@@ -98,7 +97,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 	
 	$ gem -v
 
->2.4.4
+><samp>2.4.4</samp>
 
 至此Ruby和gems已经在Cygwin环境下全部配置完成。
 
@@ -120,11 +119,11 @@ $ gem sources -a https://ruby.taobao.org/</del>
 为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：
 这种
 
->source https://rubygems.org/ not present in cache
+><samp>source https://rubygems.org/ not present in cache</samp>
 
 或这种
 
->source https://ruby.taobao.org/ is not a URI
+><samp>source https://ruby.taobao.org/ is not a URI</samp>
 
 错误。(后来我测试发现也正确了，坑爹。)
 
@@ -134,9 +133,9 @@ $ gem sources -a https://ruby.taobao.org/</del>
 	$ gem sources -a 'https://ruby.taobao.org/'
 	$ gem sources -l
 
->*** CURRENT SOURCES ***
+><samp>*** CURRENT SOURCES ***</samp>
 >	
->https://ruby.taobao.org
+><samp>https://ruby.taobao.org</samp>
 
 用`'`把URL括起来就正确了，
 
