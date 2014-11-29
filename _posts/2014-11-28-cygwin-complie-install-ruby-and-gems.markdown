@@ -13,13 +13,13 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 >
 >HTTP Response 302
 
-如何更新[淘宝源](http://ruby.taobao.org/)我文章[后边](#taobaoyuan)会说到。
+如何更新淘宝源我文章[后边](#taobaoyuan)会说到。
 
 一开始以为是被屏蔽了，挂上VPN还是一样。
 
 后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。
 
-然后就发现了[Cygwin](https://cygwin.com/install.html),它是用来在windows模拟linux的程序，到[官网](https://cygwin.com/install.html)根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。
+然后就发现了[Cygwin](https://cygwin.com/install.html),它是用来在windows模拟linux的程序，到官网根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。
 
 安装的时候一路下一步，当到达`Choose A Download Site`这一步时选择:
 
@@ -105,7 +105,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 <h3 id="taobaoyuan">
 更换淘宝gems源
 </h3>
-引用[淘宝gems源](http://ruby.taobao.org/)的话
+引用淘宝gems源的话
 
 >由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。
 
