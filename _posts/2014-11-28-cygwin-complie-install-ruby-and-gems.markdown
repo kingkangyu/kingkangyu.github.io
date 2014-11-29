@@ -31,7 +31,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 ![安装选项](https://raw.githubusercontent.com/kingkangyu/kingkangyu.github.io/master/assets/images/20141128/20141128ruby.jpg)
 
-这里看到两处蓝色线的地方，点一下`Devel`，会从`Default`变成`Install`，这里是包含gcc的部分，可以从官网下载源码编译安装。
+这里看到两处蓝色线的地方，点一下`Devel`，会从`Default`变成`Install`，这里是包含gcc的部分，用来编译安装从官网下载的Ruby源码。
 有人可能会问，下边的蓝线标注不是有`Ruby`选项，把它点一下变成`Install`不就可以了。这种是可以安装`Ruby`和`gems`的
 ，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接[跳到下边](#taobaoyuan)看如何更新淘宝源）
 
@@ -118,7 +118,6 @@ $ gem sources -a https://ruby.taobao.org/
 </del>
 </pre>
 
-
 为什么打删除线呢，因为T妹的在我这里根本不好使，一输入就报：
 这种
 
@@ -126,9 +125,7 @@ $ gem sources -a https://ruby.taobao.org/
 
 或这种
 
-
 >source https://ruby.taobao.org/ is not a URI
-
 
 错误。(后来我测试发现也正确了，坑爹。)
 
