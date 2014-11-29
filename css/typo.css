@@ -183,17 +183,28 @@ mark{
 /* 代码片断 */
 pre, code, pre tt{
   font-family:Courier, 'Courier New', monospace;
-  color: #C7254E;
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
 }
 
 pre{
-  background:#f8f8f8;
-  border:1px solid #ddd;
+  color: #333333;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  /*background:#f8f8f8;
+  border:1px solid #ddd;*/
   padding:1em 1.5em;
   display:block;
   -webkit-overflow-scrolling: touch;
-}
 
+}
+pre code{
+  background-color: transparent;
+}
 /* 一致化 horizontal rule */
 hr{
   border:none;

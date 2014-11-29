@@ -63,13 +63,13 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
   <p>HTTP Response 302</p>
 </blockquote>
 
-<p>如何更新<a href="http://ruby.taobao.org/">淘宝源</a>我文章<a href="#taobaoyuan">后边</a>会说到。</p>
+<p>如何更新淘宝源我文章<a href="#taobaoyuan">后边</a>会说到。</p>
 
 <p>一开始以为是被屏蔽了，挂上VPN还是一样。</p>
 
 <p>后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。</p>
 
-<p>然后就发现了<a href="https://cygwin.com/install.html">Cygwin</a>,它是用来在windows模拟linux的程序，到<a href="https://cygwin.com/install.html">官网</a>根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。</p>
+<p>然后就发现了<a href="https://cygwin.com/install.html">Cygwin</a>,它是用来在windows模拟linux的程序，到官网根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。</p>
 
 <p>安装的时候一路下一步，当到达<code>Choose A Download Site</code>这一步时选择:</p>
 
@@ -82,7 +82,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 <p><img src="https://raw.githubusercontent.com/kingkangyu/kingkangyu.github.io/master/assets/images/20141128/20141128ruby.jpg" alt="安装选项" /></p>
 
-<p>这里看到两处蓝色线的地方，点一下<code>Devel</code>，会从<code>Default</code>变成<code>Install</code>，这里是包含gcc的部分，可以从官网下载源码编译安装。
+<p>这里看到两处蓝色线的地方，点一下<code>Devel</code>，会从<code>Default</code>变成<code>Install</code>，这里是包含gcc的部分，用来编译安装从官网下载的Ruby源码。
 有人可能会问，下边的蓝线标注不是有<code>Ruby</code>选项，把它点一下变成<code>Install</code>不就可以了。这种是可以安装<code>Ruby</code>和<code>gems</code>的
 ，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接<a href="#taobaoyuan">跳到下边</a>看如何更新淘宝源）</p>
 
@@ -170,7 +170,7 @@ $ make install
 <h3 id="taobaoyuan">
 更换淘宝gems源
 </h3>
-<p>引用<a href="http://ruby.taobao.org/">淘宝gems源</a>的话</p>
+<p>引用淘宝gems源的话</p>
 
 <blockquote>
   <p>由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。</p>

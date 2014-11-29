@@ -5,8 +5,8 @@
     <description>康雨的技术博客，总结工作中遇到的问题和解决办法。</description>
     <link>http://kingknagyu.github.io/</link>
     <atom:link href="http://kingknagyu.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 28 Nov 2014 22:43:32 +0800</pubDate>
-    <lastBuildDate>Fri, 28 Nov 2014 22:43:32 +0800</lastBuildDate>
+    <pubDate>Sat, 29 Nov 2014 10:14:21 +0800</pubDate>
+    <lastBuildDate>Sat, 29 Nov 2014 10:14:21 +0800</lastBuildDate>
     <generator>Jekyll v2.5.1</generator>
     
       <item>
@@ -20,13 +20,13 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
   &lt;p&gt;HTTP Response 302&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;如何更新&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝源&lt;/a&gt;我文章&lt;a href=&quot;#taobaoyuan&quot;&gt;后边&lt;/a&gt;会说到。&lt;/p&gt;
+&lt;p&gt;如何更新淘宝源我文章&lt;a href=&quot;#taobaoyuan&quot;&gt;后边&lt;/a&gt;会说到。&lt;/p&gt;
 
 &lt;p&gt;一开始以为是被屏蔽了，挂上VPN还是一样。&lt;/p&gt;
 
 &lt;p&gt;后来查了一下好像是因为版本低的缘故，就开始琢磨其他的方法了。&lt;/p&gt;
 
-&lt;p&gt;然后就发现了&lt;a href=&quot;https://cygwin.com/install.html&quot;&gt;Cygwin&lt;/a&gt;,它是用来在windows模拟linux的程序，到&lt;a href=&quot;https://cygwin.com/install.html&quot;&gt;官网&lt;/a&gt;根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。&lt;/p&gt;
+&lt;p&gt;然后就发现了&lt;a href=&quot;https://cygwin.com/install.html&quot;&gt;Cygwin&lt;/a&gt;,它是用来在windows模拟linux的程序，到官网根据自己的系统（32位setup-x86 ,64位setup-x86_64）下载相应的版本。&lt;/p&gt;
 
 &lt;p&gt;安装的时候一路下一步，当到达&lt;code&gt;Choose A Download Site&lt;/code&gt;这一步时选择:&lt;/p&gt;
 
@@ -39,7 +39,7 @@ windows版的Ruby比linux版本低很多（windows版1.8.6，最新版2.1.5，�
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/kingkangyu/kingkangyu.github.io/master/assets/images/20141128/20141128ruby.jpg&quot; alt=&quot;安装选项&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;这里看到两处蓝色线的地方，点一下&lt;code&gt;Devel&lt;/code&gt;，会从&lt;code&gt;Default&lt;/code&gt;变成&lt;code&gt;Install&lt;/code&gt;，这里是包含gcc的部分，可以从官网下载源码编译安装。
+&lt;p&gt;这里看到两处蓝色线的地方，点一下&lt;code&gt;Devel&lt;/code&gt;，会从&lt;code&gt;Default&lt;/code&gt;变成&lt;code&gt;Install&lt;/code&gt;，这里是包含gcc的部分，用来编译安装从官网下载的Ruby源码。
 有人可能会问，下边的蓝线标注不是有&lt;code&gt;Ruby&lt;/code&gt;选项，把它点一下变成&lt;code&gt;Install&lt;/code&gt;不就可以了。这种是可以安装&lt;code&gt;Ruby&lt;/code&gt;和&lt;code&gt;gems&lt;/code&gt;的
 ，但是安装的不是最新版本，更新源的时候也有可能会像前边的老版本一样出错。（不过网速快的话也可以尝试一下，可以直接&lt;a href=&quot;#taobaoyuan&quot;&gt;跳到下边&lt;/a&gt;看如何更新淘宝源）&lt;/p&gt;
 
@@ -127,7 +127,7 @@ $ make install
 &lt;h3 id=&quot;taobaoyuan&quot;&gt;
 更换淘宝gems源
 &lt;/h3&gt;
-&lt;p&gt;引用&lt;a href=&quot;http://ruby.taobao.org/&quot;&gt;淘宝gems源&lt;/a&gt;的话&lt;/p&gt;
+&lt;p&gt;引用淘宝gems源的话&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;由于国内网络原因（你懂的），导致 rubygems.org 存放在 Amazon S3 上面的资源文件间歇性连接失败。所以你会与遇到 gem install rack 或 bundle install 的时候半天没有响应，具体可以用 gem install rails -V 来查看执行过程。&lt;/p&gt;
