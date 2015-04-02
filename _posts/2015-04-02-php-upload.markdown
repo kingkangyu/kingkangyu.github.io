@@ -66,22 +66,22 @@ tags: php
 
 		bool is_uploaded_file ( string $filename )
 
-	如果 filename 所给出的文件是通过 HTTP POST 上传的则返回 TRUE。这可以用来确保恶意的用户无法欺骗脚本去访问本不能访问的文件.
+	如果` filename `所给出的文件是通过 HTTP POST 上传的则返回 TRUE。这可以用来确保恶意的用户无法欺骗脚本去访问本不能访问的文件.
 	
 	这种检查显得格外重要，如果上传的文件有可能会造成对用户或本系统的其他用户显示其内容的话。
 	
-	为了能使 `is_uploaded_file()` 函数正常工作，必段指定类似于 $_FILES['userfile']['tmp_name'] 的变量，而在从客户端上传的文件名 $_FILES['userfile']['name'] 不能正常运作。 
+	为了能使 `is_uploaded_file()` 函数正常工作，必须指定类似于 `$_FILES['userfile']['tmp_name']` 的变量，而在从客户端上传的文件名 `$_FILES['userfile']['name']` 不能正常运作。 
 	
 - `move_uploaded_file` — 将上传的文件移动到新位置
 
 		bool move_uploaded_file ( string $filename , string $destination )
 
-	本函数检查并确保由 filename 指定的文件是合法的上传文件（即通过 PHP 的 HTTP POST 上传机制所上传的）。如果文件合法，则将其移动为由 destination 指定的文件。
+	本函数检查并确保由 `filename` 指定的文件是合法的上传文件（即通过 PHP 的 HTTP POST 上传机制所上传的）。如果文件合法，则将其移动为由 `destination` 指定的文件。
 	
 	这种检查显得格外重要，如果上传的文件有可能会造成对用户或本系统的其他用户显示其内容的话。 
 
 		<?php
-		// PHP版本应高于4.1.0
+		// PHP版本应不低于4.1.0
 		
 		$uploaddir = '/var/www/uploads/';
 		$uploadfile = $uploaddir . basename($_FILES['userfile']['name']);
