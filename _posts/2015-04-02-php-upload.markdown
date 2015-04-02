@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "PHP上传文件基础"
+title:  "PHP文件上传基础"
 date:   2015-04-02 23:04:00
 categories: php
 tags: php
