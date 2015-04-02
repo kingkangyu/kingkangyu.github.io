@@ -141,7 +141,7 @@ tags: php
 49. 在可以用PHP内部字符串操作函数的情况下，不要用正则表达式；
 
 
-50.` foreach`效率更高，尽量用`foreach`代替`while`和`for`循环；
+50. ` foreach`效率更高，尽量用`foreach`代替`while`和`for`循环；
 
 
 51. 用单引号替代双引号引用字符串；
@@ -151,6 +151,7 @@ tags: php
 
 
 53. 对global变量，应该用完就`unset()`掉；
+
 
 原文链接：http://www.cnblogs.com/cnsanshao/archive/2011/08/24/2152666.html
 
