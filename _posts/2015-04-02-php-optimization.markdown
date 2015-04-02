@@ -10,7 +10,7 @@ tags: php
 
 1. 如果能将类的方法定义成`static`，就尽量定义成`static`，它的速度会提升将近4倍。
 
-2. '`$row[’id’]` 的速度是`$row[id]`的7倍。
+2. `$row[’id’]` 的速度是`$row[id]`的7倍。
 
 3. echo 比 print 快，并且使用echo的多重参数（译注：指用逗号而不是句点）代替字符串连接，比如echo `$str1`,`$str2`。
 
@@ -22,7 +22,7 @@ tags: php
 
 7. `require_once()`代价昂贵。
 
-8. nclude文件时尽量使用绝对路径，因为它避免了PHP去include_path里查找文件的速度，解析操作系统路径所需的时间会更少。
+8. include文件时尽量使用绝对路径，因为它避免了PHP去include_path里查找文件的速度，解析操作系统路径所需的时间会更少。
 
 9. 果你想知道脚本开始执行（译注：即服务器端收到客户端请求）的时刻，使用`$_SERVER[‘REQUEST_TIME’]`要好于`time()`。
 
