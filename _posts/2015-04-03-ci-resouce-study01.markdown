@@ -226,6 +226,7 @@ chdir — 改变目录
 - 说明
 
         mixed version_compare ( string $version1 , string $version2 [, string $operator ] )
-    version_compare() 用于对比两个「PHP 规范化」的版本数字字符串。 这对于编写仅能兼容某些版本 PHP 的程序很有帮助。
+
+    `version_compare()` 用于对比两个「PHP 规范化」的版本数字字符串。 这对于编写仅能兼容某些版本 PHP 的程序很有帮助。
 
 
