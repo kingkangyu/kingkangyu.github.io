@@ -153,7 +153,7 @@ chdir — 改变目录
 
     该函数返回替换后的数组或者字符串。
 
-[__FILE__](http://php.net/manual/zh/language.constants.predefined.php)
+[ \_\_FILE\_\_ ](http://php.net/manual/zh/language.constants.predefined.php)
 
 文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。自 PHP 4.0.2 起，`__FILE__ `总是包含一个绝对路径（如果是符号连接，则是解析后的绝对路径），而在此之前的版本有时会包含一个相对路径。
 
