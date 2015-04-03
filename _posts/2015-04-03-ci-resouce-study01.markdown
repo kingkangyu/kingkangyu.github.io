@@ -153,7 +153,7 @@ chdir — 改变目录
 
     该函数返回替换后的数组或者字符串。
 
-[`__FILE__`](http://php.net/manual/zh/language.constants.predefined.php)
+[__FILE__](http://php.net/manual/zh/language.constants.predefined.php)
 
 文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。自 PHP 4.0.2 起，`__FILE__ `总是包含一个绝对路径（如果是符号连接，则是解析后的绝对路径），而在此之前的版本有时会包含一个相对路径。
 
@@ -165,7 +165,7 @@ chdir — 改变目录
     
     该函数返回 `haystack` 字符串中的一部分，这部分以 needle 的最后出现位置开始，直到 `haystack` 末尾。
 
-[`is_dir`](http://php.net/manual/zh/function.is-dir.php) — 判断给定文件名是否是一个目录
+[is_dir](http://php.net/manual/zh/function.is-dir.php) — 判断给定文件名是否是一个目录
 
 - 说明
 
@@ -173,7 +173,7 @@ chdir — 改变目录
     
     判断给定文件名是否是一个目录。
 
-[`trim`](http://php.net/manual/zh/function.trim.php) — 去除字符串首尾处的空白字符（或者其他字符）
+[trim](http://php.net/manual/zh/function.trim.php) — 去除字符串首尾处的空白字符（或者其他字符）
 
 - 说明
 
@@ -193,7 +193,7 @@ chdir — 改变目录
 
     "\x0B" (ASCII 11 (0x0B))，垂直制表符。
 
-[`require_once`](http://php.net/manual/zh/function.require-once.php)
+[require_once](http://php.net/manual/zh/function.require-once.php)
 
 - 说明
     
@@ -203,7 +203,7 @@ chdir — 改变目录
 
 ### core/Common.php ###
 
-[`phpversion`](http://php.net/manual/zh/function.phpversion.php) — 获取当前的PHP版本
+[phpversion](http://php.net/manual/zh/function.phpversion.php) — 获取当前的PHP版本
 
 - 说明
 
@@ -221,7 +221,7 @@ chdir — 改变目录
 
     系统分隔符
     
-[`version_compare`](http://php.net/manual/zh/function.version-compare.php) — 对比两个「PHP 规范化」的版本数字字符串
+[version_compare](http://php.net/manual/zh/function.version-compare.php) — 对比两个「PHP 规范化」的版本数字字符串
 
 - 说明
 
