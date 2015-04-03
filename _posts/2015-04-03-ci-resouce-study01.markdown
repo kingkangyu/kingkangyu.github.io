@@ -173,7 +173,7 @@ chdir — 改变目录
     
     判断给定文件名是否是一个目录。
 
-['trim'](http://php.net/manual/zh/function.trim.php) — 去除字符串首尾处的空白字符（或者其他字符）
+[`trim`](http://php.net/manual/zh/function.trim.php) — 去除字符串首尾处的空白字符（或者其他字符）
 
 - 说明
 
