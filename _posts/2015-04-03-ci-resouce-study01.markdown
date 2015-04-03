@@ -11,8 +11,8 @@ tags: php CI
 `defined` — 检查某个名称的常量是否存在
 
 - 说明
-
-    	bool defined ( string $name )
+- 
+        bool defined ( string $name )
     
 	检查该名称的常量是否已定义。
 
