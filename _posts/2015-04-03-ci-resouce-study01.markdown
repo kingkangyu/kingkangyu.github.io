@@ -48,6 +48,7 @@ tags: php CI
 - 说明
 
         string dirname ( string $path )
+
     给出一个包含有指向一个文件的全路径的字符串，本函数返回去掉文件名后的目录名。
 
 - 参数
@@ -220,7 +221,7 @@ chdir — 改变目录
 
     系统分隔符
     
-['version_compare'](http://php.net/manual/zh/function.version-compare.php) — 对比两个「PHP 规范化」的版本数字字符串
+[`version_compare`](http://php.net/manual/zh/function.version-compare.php) — 对比两个「PHP 规范化」的版本数字字符串
 
 - 说明
 
